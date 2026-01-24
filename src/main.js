@@ -1,6 +1,7 @@
 import { Router } from './core/router.js';
 import { Header } from './components/header.js';
 import { Footer } from './components/footer.js';
+import { TopBar } from './components/topBar.js';
 
 // Import Pages
 import { Home } from './pages/home.js';
@@ -10,36 +11,7 @@ import { Services, ServiceDetail } from './pages/services.js';
 import { Articles } from './pages/articles.js';
 import { ArticleDetail } from './pages/articleDetail.js';
 
-/**
- * Static About Page (Inlined for simplicity as it's static)
- */
-const About = () => {
-  return `
-        <div class="max-w-4xl mx-auto space-y-12 py-10">
-            <header class="text-center">
-                <h1 class="text-5xl font-extrabold text-primary mb-6 italic">À propos de nous</h1>
-                <p class="text-xl text-slate-500 leading-relaxed">
-                    Le Centre de Formation Professionnelle est une institution dédiée à l'excellence et à l'insertion professionnelle rapide.
-                </p>
-            </header>
-            
-            <section class="prose prose-slate max-w-none bg-white p-12 rounded-3xl border border-gray-100 shadow-sm">
-                <h2 class="text-primary italic">Notre Vision</h2>
-                <p>Nous croyons que chaque individu possède un potentiel unique qui ne demande qu'à être révélé par une formation pratique de haute qualité.</p>
-                
-                <h2 class="text-primary italic">Notre Mission</h2>
-                <p>Offrir des programmes de formation innovants, adaptés aux réalités du marché de l'emploi burundais et international.</p>
-                
-                <h2 class="text-primary italic">Pourquoi nous choisir ?</h2>
-                <ul>
-                    <li><strong>Expertise :</strong> Des formateurs issus du monde professionnel.</li>
-                    <li><strong>Équipement :</strong> Des outils de pointe pour un apprentissage concret.</li>
-                    <li><strong>Réseau :</strong> Des partenariats avec les plus grandes entreprises locales.</li>
-                </ul>
-            </section>
-        </div>
-    `;
-};
+import { About } from './pages/about.js';
 
 /**
  * Route Definitions
@@ -53,14 +25,15 @@ const routes = [
   { path: '/articles', view: Articles },
   { path: '/article/:slug', view: ArticleDetail },
   { path: '/about', view: About },
-  { path: '/contact', view: () => `<div class="p-20 text-center"><h1 class="text-3xl font-bold">Contactez-nous à contact@cfp-portal.bi</h1></div>` }
+  { path: '/contact', view: () => `<div class="p-20 text-center"><h1 class="text-3xl font-bold text-primary">contact@cfp-portal.bi</h1><p class="text-slate-500 mt-4">Notre équipe vous répondra dans les plus brefs délais.</p></div>` }
 ];
 
 /**
  * Initialize Application
  */
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Render Header and Footer
+  // 1. Render TopBar, Header and Footer
+  document.getElementById('top-bar-container').innerHTML = TopBar();
   document.getElementById('header-container').innerHTML = Header();
   document.getElementById('footer-container').innerHTML = Footer();
 
@@ -83,4 +56,36 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Initialize Router
   const router = new Router(routes);
   router.init();
+
+  // 4. Initialize AOS (Animate on Scroll)
+  if (window.AOS) {
+    window.AOS.init({
+      duration: 800,
+      once: true, // changed to true to prevent weird re-animation behaviors
+      mirror: false,
+      easing: 'ease-in-out',
+      offset: 50, // trigger animations sooner
+    });
+  }
+
+  // Re-init AOS on route change (simplified)
+  window.addEventListener('popstate', () => {
+    setTimeout(() => {
+      if (window.AOS) window.AOS.refreshHard(); // Use refreshHard
+    }, 500);
+  });
+
+  // Custom event for router to tell us when view is rendered
+  document.addEventListener('viewRendered', () => {
+    if (window.AOS) {
+      // Immediate refresh
+      window.AOS.refreshHard();
+
+      // Refresh again after short delay to allow layout to settle
+      setTimeout(() => window.AOS.refresh(), 200);
+
+      // Final refresh to catch late rendering
+      setTimeout(() => window.AOS.refresh(), 1000);
+    }
+  });
 });

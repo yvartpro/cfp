@@ -56,6 +56,9 @@ export class Router {
           this.view.innerHTML = '';
           this.view.appendChild(content);
         }
+
+        // Dispatch event for components that need to know when view is ready (like AOS)
+        document.dispatchEvent(new CustomEvent('viewRendered'));
       } catch (error) {
         console.error('Routing error:', error);
         this.view.innerHTML = `<div class="p-8 text-center text-red-500">Une erreur est survenue lors du chargement de la page.</div>`;

@@ -1,7 +1,26 @@
 /**
  * API Wrapper for CFP Backend
  */
-const BASE_URL = 'http://127.0.0.1:4000/cfp/api'; // Standard default, should be configurable for production
+const BASE_URL = 'http://127.0.0.1:5000/cfp/api';
+
+// Helper to fix port 4000 in image paths from legacy DB data
+const fixImageUrls = (data) => {
+  if (!data) return data;
+  if (typeof data === 'string') {
+    return data.replace('http://127.0.0.1:4000', 'http://127.0.0.1:5000');
+  }
+  if (Array.isArray(data)) {
+    return data.map(item => fixImageUrls(item));
+  }
+  if (typeof data === 'object') {
+    const newData = {};
+    for (const key in data) {
+      newData[key] = fixImageUrls(data[key]);
+    }
+    return newData;
+  }
+  return data;
+};
 
 export const api = {
   async fetch(endpoint, options = {}) {
@@ -18,7 +37,8 @@ export const api = {
         throw new Error(`API Error: ${response.status} ${response.statusText}`);
       }
 
-      return await response.json();
+      const data = await response.json();
+      return fixImageUrls(data);
     } catch (error) {
       console.error('API Fetch Error:', error);
       throw error;
@@ -32,9 +52,12 @@ export const api = {
 
   // Filieres
   getFilieres: () => api.fetch('/filiere'),
-  getFiliereBySlug: (slug) => api.fetch(`/filiere/${slug}`),
+  getFiliereBySlug: (slug) => api.fetch(`/filiere/slug/${slug}`),
 
   // Services
   getServices: () => api.fetch('/service'),
-  getServiceBySlug: (slug) => api.fetch(`/service/${slug}`),
+  getServiceBySlug: (slug) => api.fetch(`/service/slug/${slug}`),
+
+  // Files
+  getFiles: (params = '') => api.fetch(`/file${params}`),
 };
