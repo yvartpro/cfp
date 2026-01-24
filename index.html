@@ -4,6 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Base path for GitHub Pages -->
+    <script>
+        // Set base path dynamically
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const basePath = isLocal ? '/' : '/cfp/';
+        document.write('<base href="' + basePath + '">');
+
+        // GitHub Pages SPA redirect handler
+        // Check if we have a redirect query parameter from 404.html
+        (function () {
+            const query = window.location.search;
+            if (query && query.indexOf('?p=') === 0) {
+                const route = query.slice(3); // Remove '?p='
+                window.history.replaceState(null, null,
+                    window.location.pathname.replace(/\/$/, '') + route
+                );
+            }
+        })();
+    </script>
+
     <title>Centre de Formation Professionnelle (CFP)</title>
     <meta name="description" content="Formation professionnelle de qualité pour votre avenir.">
 

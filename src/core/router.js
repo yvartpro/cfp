@@ -1,6 +1,8 @@
 /**
  * Simple client-side router for SPA navigation
  */
+import { BASE_PATH } from '../config.js';
+
 export class Router {
   constructor(routes) {
     this.routes = routes;
@@ -15,18 +17,25 @@ export class Router {
       if (e.target.matches('[data-link]') || e.target.closest('[data-link]')) {
         e.preventDefault();
         const link = e.target.matches('[data-link]') ? e.target : e.target.closest('[data-link]');
-        this.navigateTo(link.href);
+        this.navigateTo(link.getAttribute('href'));
       }
     });
   }
 
   navigateTo(url) {
-    history.pushState(null, null, url);
+    // Add base path if not already present
+    const fullUrl = url.startsWith(BASE_PATH) ? url : BASE_PATH + url;
+    history.pushState(null, null, fullUrl);
     this.handleRoute();
   }
 
   async handleRoute() {
-    const path = window.location.pathname;
+    // Remove base path from pathname for route matching
+    let path = window.location.pathname;
+    if (BASE_PATH && path.startsWith(BASE_PATH)) {
+      path = path.substring(BASE_PATH.length) || '/';
+    }
+
     let match = this.routes.find(route => {
       const regex = new RegExp("^" + route.path.replace(/:[^\s/]+/g, "([\\w-]+)") + "$");
       return path.match(regex);

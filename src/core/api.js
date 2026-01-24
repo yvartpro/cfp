@@ -1,7 +1,9 @@
 /**
  * API Wrapper for CFP Backend
  */
-const BASE_URL = "https://capbio.bi/cfp/api" //'http://127.0.0.1:5000/cfp/api';
+import { API_BASE_URL } from '../config.js';
+
+const BASE_URL = API_BASE_URL;
 
 // Helper to fix port 4000 in image paths from legacy DB data
 const fixImageUrls = (data) => {
