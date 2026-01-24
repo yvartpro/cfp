@@ -14,7 +14,7 @@
     const query = window.location.search;
 
     window.location.replace(
-      window.location.origin + '/' +
+      window.location.origin +
       window.location.pathname.split('/').slice(0, pathSegmentsToKeep + 1).join('/') +
       '/?p=/' + path + query
     );

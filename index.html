@@ -12,7 +12,7 @@
 
         // Set base path dynamically
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const basePath = isLocal ? '/' : `/${REPO_NAME}`;
+        const basePath = isLocal ? '/' : '/' + REPO_NAME + '/';
 
         // Expose to application
         window.CFP_CONFIG = {
