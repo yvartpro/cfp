@@ -7,13 +7,23 @@
 
     <!-- Base path for GitHub Pages -->
     <script>
+        // CONFIGURATION: One place to change the repo name
+        const REPO_NAME = 'cfp'; // Change this if you rename the repo
+
         // Set base path dynamically
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const basePath = isLocal ? '/' : '/cfp/';
+        const basePath = isLocal ? '/' : `/${REPO_NAME}/`;
+
+        // Expose to application
+        window.CFP_CONFIG = {
+            repoName: REPO_NAME,
+            basePath: basePath,
+            isLocal: isLocal
+        };
+
         document.write('<base href="' + basePath + '">');
 
         // GitHub Pages SPA redirect handler
-        // Check if we have a redirect query parameter from 404.html
         (function () {
             const query = window.location.search;
             if (query && query.indexOf('?p=') === 0) {
@@ -169,7 +179,7 @@
     </script>
 
     <!-- Main Entry Point -->
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="src/main.js"></script>
 </body>
 
 </html>

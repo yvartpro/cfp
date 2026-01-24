@@ -2,12 +2,14 @@
  * Application Configuration
  */
 
-// Base path for GitHub Pages deployment
-// Set to '/cfp' for username.github.io/cfp
-// Set to '' for root domain or local development
-export const BASE_PATH = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-  ? ''
-  : '/cfp';
+// Read config from global scope (injected by index.html)
+// This ensures configuration is centralized in index.html
+const config = window.CFP_CONFIG || {
+  basePath: '',
+  isLocal: true
+};
+
+export const BASE_PATH = config.basePath;
 
 // API Base URL
 export const API_BASE_URL = 'https://capbio.bi/cfp/api';
