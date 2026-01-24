@@ -47,15 +47,12 @@ export const Home = async () => {
         <section class="h-[600px] md:h-[700px] relative">
           ${Carousel(carouselImages)}
           <div class="absolute inset-0 bg-black/30 pointer-events-none z-10"></div>
-          <div class="absolute inset-0 z-20 flex items-center justify-center text-center">
-            <div class="container px-4" data-aos="fade-up">
+          <div class="absolute inset-0 z-20 flex items-center justify-center md:justify-end text-center md:text-right">
+            <div class="container px-4 md:px-8 lg:px-12" data-aos="fade-up">
               <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white uppercase tracking-tight mb-6 drop-shadow-lg">
                 Excellence & <br/><span class="text-secondary">Innovation</span>
               </h1>
-              <p class="text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto mb-10 drop-shadow-md">
-                Préparer aujourd'hui les leaders de demain grâce à une formation professionnelle de pointe.
-              </p>
-              <div class="flex flex-col md:flex-row gap-4 justify-center">
+              <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-end">
                   <a href="/about" data-link class="bg-primary hover:bg-white hover:text-primary text-white border-2 border-primary px-8 py-4 uppercase font-bold tracking-widest text-sm transition-all duration-300">
                     Découvrir l'école
                   </a>

@@ -36,10 +36,9 @@ export const Carousel = (images) => {
     <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
       <img src="${img.path}" class="w-full h-full object-cover" alt="${img.description || 'Slide'}">
-      <div class="absolute bottom-20 left-12 right-12 z-20 text-white max-w-2xl">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-accent/40 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase tracking-widest mb-4">Actualités</span>
-        <h2 class="text-4xl md:text-6xl font-black mb-4 leading-tight">${img.description || 'Bienvenue au Centre de Formation'}</h2>
-        <p class="text-white/80 text-lg md:text-xl font-medium line-clamp-2">Découvrez une excellence académique et professionnelle sans compromis.</p>
+      <div class="absolute bottom-12 md:bottom-20 left-4 md:left-12 right-4 md:right-auto z-20 text-white w-auto md:max-w-2xl text-center md:text-left">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-4 leading-tight">${img.description || 'Bienvenue au Centre de Formation'}</h2>
+        <p class="text-white/80 text-base md:text-lg lg:text-xl font-medium line-clamp-2 md:line-clamp-3">${img.subtitle || 'Découvrez une excellence académique et professionnelle sans compromis.'}</p>
       </div>
     </div>
   `).join('');
