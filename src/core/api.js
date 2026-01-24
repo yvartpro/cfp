@@ -1,13 +1,13 @@
 /**
  * API Wrapper for CFP Backend
  */
-const BASE_URL = 'http://127.0.0.1:5000/cfp/api';
+const BASE_URL = "https://capbio.bi/cfp/api" //'http://127.0.0.1:5000/cfp/api';
 
 // Helper to fix port 4000 in image paths from legacy DB data
 const fixImageUrls = (data) => {
   if (!data) return data;
   if (typeof data === 'string') {
-    return data.replace('http://127.0.0.1:4000', 'http://127.0.0.1:5000');
+    return data.replace('https://capbio.bi/cfp', 'https://capbio.bi/cfp');
   }
   if (Array.isArray(data)) {
     return data.map(item => fixImageUrls(item));
@@ -47,7 +47,25 @@ export const api = {
 
   // Articles
   getArticles: (params = '') => api.fetch(`/article${params}`),
-  getArticleBySlug: (slug) => api.fetch(`/article/slug/${slug}`),
+  getArticleBySlug: async (slug) => {
+    const result = await api.fetch(`/article/slug/${slug}`);
+    // Handle { data: [article] } or { data: article } wrappers
+    let article = result;
+    if (result.data) {
+      article = Array.isArray(result.data) ? result.data[0] : result.data;
+    }
+
+    // Parse content if it's a string (stringified JSON)
+    if (article && typeof article.content === 'string') {
+      try {
+        article.content = JSON.parse(article.content);
+      } catch (e) {
+        console.error('Failed to parse article content:', e);
+      }
+    }
+
+    return article;
+  },
   getArticleById: (id) => api.fetch(`/article/${id}`),
 
   // Filieres
