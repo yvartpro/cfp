@@ -34,11 +34,12 @@ export const Home = async () => {
     const hasFilieres = filieres.data && filieres.data.length > 0;
 
     const carouselImages = files.data && files.data.length > 0
-      ? files.data.slice(5, -1).map(f => ({ path: f.path, description: f.description }))
+      ? files.data.slice(-5).map(f => ({ path: f.path, description: f.description }))
       : [
-        { path: 'https://capbio.bi/cfp/uploads/cfp_50452.webp', description: 'Bienvenue au CFP' },
-        { path: 'https://capbio.bi/cfp/uploads/cfp_137552.webp', description: 'Une éducation de qualité' }
+        { path: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2670&auto=format&fit=crop', description: 'Bienvenue au CFP' },
+        { path: 'https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2670&auto=format&fit=crop', description: 'Une éducation de qualité' }
       ];
+
 
     return `
       <div class="overflow-x-hidden font-sans text-gray-700">
