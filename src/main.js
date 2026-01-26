@@ -77,6 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Custom event for router to tell us when view is rendered
   document.addEventListener('viewRendered', () => {
+    // 1. Initialize Plyr if video exists
+    if (window.Plyr && document.getElementById('player')) {
+      new window.Plyr('#player', {
+        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+        settings: ['quality', 'speed']
+      });
+    }
+
     if (window.AOS) {
       // Immediate refresh
       window.AOS.refreshHard();

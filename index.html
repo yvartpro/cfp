@@ -81,6 +81,9 @@
     <!-- AOS (Animate on Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Plyr (Premium Video Player) -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
     <!-- Styles for transitions and custom patterns -->
     <style>
         body {
@@ -149,6 +152,16 @@
             white-space: nowrap;
             border-width: 0;
         }
+
+        /* Plyr Customization */
+        :root {
+            --plyr-color-main: #005baa;
+            /* Match site primary */
+        }
+
+        .plyr--video {
+            border-radius: 1rem;
+        }
     </style>
 </head>
 
@@ -177,6 +190,9 @@
             // Initial AOS init handled in main.js
         });
     </script>
+
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 
     <!-- Main Entry Point -->
     <script type="module" src="src/main.js"></script>

@@ -212,8 +212,8 @@ export const Home = async () => {
                 <div class="relative group overflow-hidden rounded-2xl shadow-2xl bg-black aspect-video flex items-center justify-center">
                   <!-- Replace source src with your static video link once uploaded -->
                   <video 
+                    id="player"
                     class="w-full h-full object-cover" 
-                    controls 
                     playsinline
                     poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2672&auto=format&fit=crop"
                   >
