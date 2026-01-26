@@ -8,28 +8,22 @@ export const About = () => {
 
     const staffMembers = [
         {
-            name: "Dr. Jean-Bosco Niyongabo",
-            role: "Directeur Général",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+            name: "Rénovat Nzeyimana",
+            role: "Directeur",
+            image: "https://capbio.bi/cfp/uploads/cfp_137552.webp",
             bio: "Plus de 20 ans d'expérience dans l'éducation technique et professionnelle."
         },
         {
-            name: "Mme. Marie Chantal Iteriteka",
+            name: "Ir. Gilbert Mbonihankuye",
+            role: "Directeur technique",
+            image: "https://capbio.bi/cfp/uploads/cfp_50452.webp",
+            bio: "Plus de 20 ans d'expérience dans l'éducation technique et professionnelle."
+        },
+        {
+            name: "Désiré Irambona",
             role: "Préfet des Études",
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+            image: "https://capbio.bi/cfp/uploads/cfp_137552.webp",
             bio: "Garante de la discipline et de la rigueur académique au sein du centre."
-        },
-        {
-            name: "Ir. Alain Kwizera",
-            role: "Responsable des Filières",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
-            bio: "Expert en ingénierie pédagogique et suivi des programmes techniques."
-        },
-        {
-            name: "M. Patrick Bucumi",
-            role: "Responsable des Services",
-            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
-            bio: "Coordonne les services aux entreprises et l'insertion professionnelle."
         }
     ];
 
