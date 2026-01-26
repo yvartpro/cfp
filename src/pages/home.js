@@ -203,6 +203,49 @@ export const Home = async () => {
             </div>
         </section>
 
+        <!-- Video Presentation Section -->
+        <section class="py-24 bg-white">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+              <!-- Video Column -->
+              <div class="lg:w-5/12 w-full" data-aos="fade-right">
+                <div class="relative group overflow-hidden rounded-2xl shadow-2xl bg-black aspect-video flex items-center justify-center">
+                  <!-- Replace source src with your static video link once uploaded -->
+                  <video 
+                    class="w-full h-full object-cover" 
+                    controls 
+                    playsinline
+                    poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2672&auto=format&fit=crop"
+                  >
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <!-- Text Column -->
+              <div class="lg:w-7/12 w-full" data-aos="fade-left">
+                <h4 class="text-secondary font-bold uppercase tracking-widest mb-2">Notre Présentation</h4>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-6 uppercase leading-tight">
+                  Découvrez l'excellence <span class="text-black">en mouvement</span>
+                </h2>
+                <div class="space-y-6 text-lg font-light leading-relaxed text-gray-600">
+                  <p>
+                    Nous croyons que la formation professionnelle est un levier de transformation. À travers cette vidéo, découvrez nos installations modernes, nos formateurs experts et l'énergie qui anime nos campus au quotidien.
+                  </p>
+                  <p>
+                    Du génie civil à l'informatique, chaque parcours est une aventure vers la maîtrise et le succès professionnel. Regardez comment nos étudiants transforment leurs ambitions en compétences concrètes.
+                  </p>
+                </div>
+                <div class="mt-8">
+                    <a href="/about" data-link class="inline-block bg-primary text-white px-8 py-3 uppercase font-bold text-sm tracking-widest hover:bg-secondary transition-colors">
+                        En savoir plus sur nous
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- News Section -->
         ${hasArticles ? `
         <section class="py-24 bg-gray-50">
