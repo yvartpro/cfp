@@ -231,10 +231,10 @@ export const Home = async () => {
                 </h2>
                 <div class="space-y-6 text-lg font-light leading-relaxed text-gray-600">
                   <p>
-                    Nous croyons que la formation professionnelle est un levier de transformation. À travers cette vidéo, découvrez nos installations modernes, nos formateurs experts et l'énergie qui anime nos campus au quotidien.
+                    Nous croyons que la formation professionnelle est un levier de transformation. À travers cette vidéo, découvrez nos installations modernes, nos formateurs experts et l'énergie qui anime notre centre au quotidien.
                   </p>
                   <p>
-                    Du génie civil à l'informatique, chaque parcours est une aventure vers la maîtrise et le succès professionnel. Regardez comment nos étudiants transforment leurs ambitions en compétences concrètes.
+                    De la m&eacute;canique industrielle &agrave; l'informatique, chaque parcours est une aventure vers la maîtrise et le succès professionnel. Regardez comment nos &eacute;l&egrave;ves transforment leurs ambitions en compétences concrètes.
                   </p>
                 </div>
                 <div class="mt-8">

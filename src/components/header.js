@@ -11,7 +11,7 @@ export const Header = () => {
                         C
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-heading font-bold text-xl leading-none text-primary uppercase tracking-tight">CFP<span class="text-secondary">Portal</span></span>
+                        <span class="font-heading font-bold text-xl leading-none text-primary uppercase tracking-tight">CFP<span class="text-secondary">Portail</span></span>
                         <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Excellence & Innovation</span>
                     </div>
                 </a>
