@@ -73,7 +73,7 @@ export const Home = async () => {
                   <div class="absolute -top-6 -left-6 w-20 h-20 border-t-4 border-l-4 border-secondary"></div>
                   <img src="https://capbio.bi/cfp/uploads/cfp_50452.webp" 
                        alt="Directeur" 
-                       class="w-full h-auto shadow-2xl z-10 relative grayscale hover:grayscale-0 transition-all duration-500">
+                       class="w-full h-auto shadow-2xl z-10 relative  hover:grayscale-0 transition-all duration-500">
                   <div class="absolute -bottom-6 -right-6 w-20 h-20 border-b-4 border-r-4 border-primary"></div>
                 </div>
               </div>

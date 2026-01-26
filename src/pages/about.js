@@ -76,7 +76,7 @@ export const About = () => {
                     </div>
                     <div class="relative group" data-aos="fade-left">
                         <div class="absolute -top-4 -right-4 w-full h-full border-4 border-secondary z-0"></div>
-                        <img src="https://capbio.bi/cfp/uploads/cfp_50452.webp" class="relative z-10 w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 shadow-xl">
+                        <img src="https://capbio.bi/cfp/uploads/cfp_50452.webp" class="relative z-10 w-full h-auto  group-hover:grayscale-0 transition-all duration-700 shadow-xl">
                     </div>
                 </div>
             </section>
