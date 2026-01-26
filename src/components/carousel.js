@@ -37,7 +37,7 @@ export const Carousel = (images) => {
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
       <img src="${img.path}" class="w-full h-full object-cover" alt="${img.description || 'Slide'}">
       <div class="absolute bottom-12 md:bottom-20 left-4 md:left-12 right-4 md:right-auto z-20 text-white w-auto md:max-w-2xl text-center md:text-left">
-        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-4 leading-tight">${img.description || 'Bienvenue au Centre de Formation'}</h2>
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-4 leading-tight">${img.description || 'Bienvenue au CFP Kigobe'}</h2>
         <p class="text-white/80 text-base md:text-lg lg:text-xl font-medium line-clamp-2 md:line-clamp-3">${img.subtitle || 'Découvrez une excellence académique et professionnelle sans compromis.'}</p>
       </div>
     </div>

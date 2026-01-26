@@ -34,10 +34,10 @@ export const Home = async () => {
     const hasFilieres = filieres.data && filieres.data.length > 0;
 
     const carouselImages = files.data && files.data.length > 0
-      ? files.data.slice(0, 5).map(f => ({ path: f.path, description: f.description }))
+      ? files.data.slice(5, -1).map(f => ({ path: f.path, description: f.description }))
       : [
-        { path: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2670&auto=format&fit=crop', description: 'Bienvenue au CFP' },
-        { path: 'https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2670&auto=format&fit=crop', description: 'Une éducation de qualité' }
+        { path: 'https://capbio.bi/cfp/uploads/cfp_50452.webp', description: 'Bienvenue au CFP' },
+        { path: 'https://capbio.bi/cfp/uploads/cfp_137552.webp', description: 'Une éducation de qualité' }
       ];
 
     return `
@@ -71,7 +71,7 @@ export const Home = async () => {
               <div class="lg:w-1/2" data-aos="fade-right">
                 <div class="relative">
                   <div class="absolute -top-6 -left-6 w-20 h-20 border-t-4 border-l-4 border-secondary"></div>
-                  <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop" 
+                  <img src="https://capbio.bi/cfp/uploads/cfp_50452.webp" 
                        alt="Directeur" 
                        class="w-full h-auto shadow-2xl z-10 relative grayscale hover:grayscale-0 transition-all duration-500">
                   <div class="absolute -bottom-6 -right-6 w-20 h-20 border-b-4 border-r-4 border-primary"></div>
@@ -84,14 +84,14 @@ export const Home = async () => {
                 </h2>
                 <div class="space-y-6 text-lg font-light leading-relaxed text-gray-600">
                   <p>
-                    Chers parents, étudiants et partenaires,<br/><br/>
+                    Chers parents, &eacute;l&egrave;ves et partenaires,<br/><br/>
                     C'est avec une immense fierté que je vous accueille sur le portail numérique de notre Centre de Formation Professionnelle. Depuis notre ouverture, nous nous sommes engagés à offrir une éducation technique de classe mondiale.
                   </p>
                   <p>
                     Notre mission est simple : démocratiser l'accès à une formation de qualité et fournir aux jeunes talents les compétences nécessaires pour exceller dans un marché du travail en constante évolution.
                   </p>
                   <div class="pt-4">
-                    <p class="font-heading font-bold text-primary text-xl">M. Directeur General</p>
+                    <p class="font-heading font-bold text-primary text-xl">M. Directeur</p>
                     <p class="text-sm uppercase tracking-wide text-gray-400">Directeur du CFP</p>
                   </div>
                 </div>
@@ -110,11 +110,11 @@ export const Home = async () => {
                     </div>
                     <div class="p-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="text-4xl md:text-5xl font-heading font-black text-primary mb-2">500+</div>
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Diplômés</div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Certifi&eacute;s</div>
                     </div>
                      <div class="p-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-4xl md:text-5xl font-heading font-black text-primary mb-2">15</div>
-                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Programmes</div>
+                        <div class="text-4xl md:text-5xl font-heading font-black text-primary mb-2">7</div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Fili&egrave;res</div>
                     </div>
                      <div class="p-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="text-4xl md:text-5xl font-heading font-black text-primary mb-2">98%</div>
@@ -129,7 +129,7 @@ export const Home = async () => {
         <section class="py-24 bg-white relative">
           <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-              <h2 class="text-3xl md:text-5xl font-heading font-bold text-primary uppercase mb-4">Nos <span class="text-secondary">Programmes</span></h2>
+              <h2 class="text-3xl md:text-5xl font-heading font-bold text-primary uppercase mb-4">Nos <span class="text-secondary">Fili&egrave;res</span></h2>
               <div class="w-20 h-1 bg-secondary mx-auto"></div>
               <p class="mt-6 text-gray-500 max-w-2xl mx-auto text-lg font-light">
                 Des cursus adaptés aux besoins du marché, alliant théorie et pratique intensive.
@@ -157,7 +157,7 @@ export const Home = async () => {
             
             <div class="text-center mt-12">
                  <a href="/filieres" data-link class="inline-block bg-white text-primary border border-gray-200 px-10 py-4 uppercase font-bold tracking-widest text-xs hover:bg-primary hover:text-white transition-colors shadow-sm">
-                    Voir tous les programmes
+                    Voir tous les fili&egrave;res
                   </a>
             </div>
           </div>
