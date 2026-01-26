@@ -64,21 +64,21 @@ export const Footer = () => {
                                 <span class="text-2xl pt-1">📍</span>
                                 <div>
                                     <span class="block font-bold text-white uppercase text-xs mb-1 tracking-wider">Adresse</span>
-                                    Avenue de l'Indépendance,<br>Bujumbura, Burundi
+                                    Avenue du Cinquant&eacute;naire, Rue Muhabo
                                 </div>
                             </li>
                              <li class="flex items-start gap-4">
                                 <span class="text-2xl pt-1">📞</span>
                                 <div>
                                     <span class="block font-bold text-white uppercase text-xs mb-1 tracking-wider">Téléphone</span>
-                                    +257 00 00 00 00
+                                    +257 22 27 95 89
                                 </div>
                             </li>
                              <li class="flex items-start gap-4">
                                 <span class="text-2xl pt-1">✉️</span>
                                 <div>
                                     <span class="block font-bold text-white uppercase text-xs mb-1 tracking-wider">Email</span>
-                                    contact@cfp-portal.bi
+                                    etpbujumbura@gmail.com
                                 </div>
                             </li>
                         </ul>

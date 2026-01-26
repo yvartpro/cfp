@@ -29,7 +29,7 @@ export const Filieres = async () => {
                         ${filieres.map((filiere, i) => `
                             <div class="bg-white rounded-none border-b-4 border-transparent hover:border-secondary shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden" data-aos="fade-up" data-aos-delay="${i * 100}">
                                 <div class="h-64 relative overflow-hidden">
-                                    <img src="${filiere.heroImage?.path || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800'}" 
+                                    <img src="${filiere.heroImage?.path || 'https://capbio.bi/cfp/uploads/cfp_137552.webp'}" 
                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                     <div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
                                     <div class="absolute bottom-0 left-0 bg-white/95 px-6 py-2 text-xs font-bold text-primary uppercase tracking-widest clip-path-slant">

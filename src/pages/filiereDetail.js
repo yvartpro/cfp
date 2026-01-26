@@ -3,18 +3,18 @@ import { seo } from '../core/seo.js';
 import { Loader } from '../components/loader.js';
 
 export const FiliereDetail = async (slug) => {
-  const container = document.getElementById('router-view');
-  container.innerHTML = Loader();
+    const container = document.getElementById('router-view');
+    container.innerHTML = Loader();
 
-  try {
-    const filiere = await api.getFiliereBySlug(slug);
+    try {
+        const filiere = await api.getFiliereBySlug(slug);
 
-    seo.update({
-      title: filiere.name,
-      description: filiere.description,
-    });
+        seo.update({
+            title: filiere.name,
+            description: filiere.description,
+        });
 
-    return `
+        return `
             <div class="max-w-6xl mx-auto space-y-16">
                 <!-- Hero -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -43,7 +43,7 @@ export const FiliereDetail = async (slug) => {
                     </div>
                     <div class="border-y md:border-y-0 md:border-x border-gray-100 py-6 md:py-0">
                         <div class="text-3xl font-bold text-accent mb-2 italic">Durée</div>
-                        <div class="text-sm text-slate-500 font-medium font-bold">Selon le module</div>
+                        <div class="text-sm text-slate-500 font-medium font-bold">2 ans</div>
                     </div>
                     <div>
                         <div class="text-3xl font-bold text-accent mb-2 italic">Emploi</div>
@@ -65,7 +65,7 @@ export const FiliereDetail = async (slug) => {
                 </section>
             </div>
         `;
-  } catch (err) {
-    return `<div class="p-12 text-center text-red-500">Cette filière n'existe pas ou est momentanément indisponible.</div>`;
-  }
+    } catch (err) {
+        return `<div class="p-12 text-center text-red-500">Cette filière n'existe pas ou est momentanément indisponible.</div>`;
+    }
 };
