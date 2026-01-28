@@ -140,7 +140,7 @@ export const Home = async () => {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               ${filieres.data.slice(0, 3).map((filiere, i) => `
                 <a href="/filiere/${filiere.slug}" data-link class="group block relative h-[400px] overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="${i * 100}">
-                  <img src="${filiere.heroImage?.path || 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2670&auto=format&fit=crop'}" 
+                  <img src="${filiere.heroImage?.path || 'https://capbio.bi/cfp/uploads/cfp_50452.webp'}" 
                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                   <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center p-8">
                       <div class="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -216,7 +216,7 @@ export const Home = async () => {
                     id="player"
                     class="w-full h-full object-cover" 
                     playsinline
-                    poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2672&auto=format&fit=crop"
+                    poster="https://capbio.bi/cfp/uploads/cfp_50452.webp"
                   >
                     <source src="https://ferdinandglobal.com/media/other/video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
