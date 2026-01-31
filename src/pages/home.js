@@ -40,7 +40,7 @@ export const Home = async () => {
         { path: 'https://capbio.bi/cfp/uploads/cfp_137552.webp', description: 'Une éducation de qualité' }
       ];
 
-
+    console.log(carouselImages)
     return `
       <div class="overflow-x-hidden font-sans text-gray-700">
         
