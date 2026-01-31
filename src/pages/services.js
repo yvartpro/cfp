@@ -14,7 +14,7 @@ export const Services = async () => {
   try {
     const response = await api.getServices();
     const services = response.data;
-
+    console.log(services)
     return `
       <div class="max-w-7xl mx-auto space-y-12 mt-6">
         <header class="text-center max-w-3xl mx-auto">
