@@ -16,7 +16,7 @@ export const Services = async () => {
     const services = response.data;
     console.log(services)
     return `
-      <div class="max-w-7xl mx-auto space-y-12 mt-6">
+      <div class="max-w-7xl mx-auto space-y-12 my-8">
         <header class="text-center max-w-3xl mx-auto">
           <h1 class="text-4xl font-extrabold text-primary mb-4 italic">Nos Services Experts</h1>
           <p class="text-slate-500 text-lg">Le CFP ne se limite pas à la formation. Nous offrons une expertise variée pour accompagner les entreprises et les particuliers.</p>
