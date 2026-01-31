@@ -27,12 +27,12 @@ export const Home = async () => {
     const [articles, filieres, files] = await Promise.all([
       safeFetch(() => api.getArticles('?limit=3')),
       safeFetch(() => api.getFilieres()),
-      safeFetch(() => api.getFiles('?limit=6'))
+      safeFetch(() => api.getFiles('?limit=6?use_as="carousel"'))
     ]);
 
     const hasArticles = articles.data && articles.data.length > 0;
     const hasFilieres = filieres.data && filieres.data.length > 0;
-
+    console.log(files)
     const carouselImages = files.data && files.data.length > 0
       ? files.data.slice(-5).map(f => ({ path: f.path, description: f.description }))
       : [
