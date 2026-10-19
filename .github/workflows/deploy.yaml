@@ -31,8 +31,7 @@ jobs:
             git stash
             git pull origin deploy
 
-            npm ci --prefix api
-            npm ci --prefix web
+            npm ci
             npm run build
 
             npm run db:migrate

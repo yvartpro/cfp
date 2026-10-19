@@ -1,6 +1,5 @@
 import jwt, { decode } from "jsonwebtoken"
-import dotenv from "dotenv"
-dotenv.config()
+import "../config/env.mjs"
 
 const auth = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1]

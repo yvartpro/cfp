@@ -1,13 +1,38 @@
 {
   "name": "cfp-fullstack",
+  "version": "1.0.0",
   "private": true,
+  "description": "CFP Kigobe React website and Express API",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "dev": "node api/app.mjs",
-    "start": "NODE_ENV=production node api/app.mjs",
-    "build": "npm --prefix web run build",
-    "db:migrate": "npm --prefix api run db:migrate",
-    "db:create": "npm --prefix api run db:create",
-    "dev:api": "node api/app.mjs",
-    "dev:web": "npm --prefix web run dev"
+    "dev:api": "nodemon api/app.mjs",
+    "dev:web": "vite web --config web/vite.config.js",
+    "start": "node api/app.mjs",
+    "build": "vite build web --config web/vite.config.js",
+    "preview": "vite preview web --config web/vite.config.js",
+    "db:create": "cd api && sequelize-cli db:create",
+    "db:migrate": "cd api && sequelize-cli db:migrate",
+    "db:migrate:undo": "cd api && sequelize-cli db:migrate:undo"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sequelize": "^6.35.2",
+    "sequelize-cli": "^6.6.5",
+    "sharp": "^0.33.1",
+    "vite": "^5.4.21"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }

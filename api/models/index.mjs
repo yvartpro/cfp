@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
-import 'dotenv/config';
+import '../config/env.mjs';
 import User from './User.mjs';
 import File from './File.mjs';
 import Filiere from './Filiere.mjs';

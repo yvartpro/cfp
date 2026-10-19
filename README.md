@@ -11,8 +11,7 @@ Single repository for the CFP public website, React admin dashboard, and Express
 Create `.env` in the repository root with `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD`, optional `DATABASE_HOST`/`DATABASE_PORT`, and `JWT_SECRET`.
 
 ```sh
-npm --prefix web install
-npm --prefix api install
+npm install
 npm run dev:api
 # in a second terminal
 npm run dev:web

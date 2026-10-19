@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import dotenv from 'dotenv';
+import './config/env.mjs';
 import userRouter from './routes/user.mjs';
 import articleRouter from './routes/article.mjs';
 import fileRouter from './routes/file.mjs';
@@ -10,7 +10,6 @@ import filiereRouter from './routes/filiere.mjs';
 import serviceRouter from './routes/service.mjs';
 import { docsHtml } from './service/docs.mjs';
 
-dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 const apiDir = path.dirname(fileURLToPath(import.meta.url));
