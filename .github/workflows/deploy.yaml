@@ -29,7 +29,7 @@ jobs:
             cd /home/yves/apps/cfp
             
             git stash
-            git pull origin deploy
+            git pull origin main
 
             npm ci
             npm run build
