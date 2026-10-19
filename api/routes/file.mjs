@@ -69,7 +69,6 @@ router.post("/", isAuth, upload.single('file'), async (req, res) => {
       const original_name = req.file.originalname;
       const filename = "cfp" + "_" + Math.round(Math.random() * 1E6) + ".webp";
       const outputPath = path.join(uploadDir, filename);
-      const baseUrl = process.env.BASE_URL || `${req.protocol}://${req.get('host')}/cfp`;
 
       await sharp(req.file.buffer)
         .resize(1080, 1080, { fit: 'inside', withoutEnlargement: true })
@@ -79,7 +78,7 @@ router.post("/", isAuth, upload.single('file'), async (req, res) => {
       const fileData = {
         original_name: original_name,
         stored_name: filename,
-        path: `${baseUrl}/uploads/${filename}`,
+        path: `/uploads/${filename}`, 
         mime_type: req.file.mimetype,
         size: req.file.size,
         description: req.body.description,
