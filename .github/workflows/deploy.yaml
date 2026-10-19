@@ -37,4 +37,4 @@ jobs:
 
             npm run db:migrate
 
-            pm2 restart hsvc
+            pm2 restart cfp
