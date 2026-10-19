@@ -1,0 +1,13 @@
+import express from 'express';
+import isAuth, { isAdmin } from '../middleware/auth.mjs';
+import UserController from '../controllers/UserController.mjs';
+const router = express.Router();
+router.post('/login', UserController.login);
+router.get('/me', isAuth, UserController.me);
+router.patch('/profile', isAuth, UserController.profile);
+router.get('/', isAuth, isAdmin, UserController.list);
+router.post('/', isAuth, isAdmin, UserController.create);
+router.get('/:id', isAuth, isAdmin, UserController.get);
+router.patch('/:id', isAuth, isAdmin, UserController.update);
+router.delete('/:id', isAuth, isAdmin, UserController.remove);
+export default router;
