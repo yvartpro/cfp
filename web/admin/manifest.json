@@ -1,0 +1,17 @@
+{
+  "name": "CFP Dashboard",
+  "short_name": "CFP",
+  "description": "Dashboard for Centre de Formation Professionnelle de Kigobe",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/admin/pwa_icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

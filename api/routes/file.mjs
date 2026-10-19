@@ -78,7 +78,7 @@ router.post("/", isAuth, upload.single('file'), async (req, res) => {
       const fileData = {
         original_name: original_name,
         stored_name: filename,
-        path: `/uploads/${filename}`, 
+        path: `/uploads/${filename}`,
         mime_type: req.file.mimetype,
         size: req.file.size,
         description: req.body.description,

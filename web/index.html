@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Base path for GitHub Pages -->
+    <script>
+        // CONFIGURATION: One place to change the repo name
+        const REPO_NAME = '';
+
+        // Set base path dynamically
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const basePath = '';
+
+        // Expose to application
+        window.CFP_CONFIG = {
+            repoName: REPO_NAME,
+            basePath: basePath,
+            isLocal: isLocal
+        };
+
+        document.write('<base href="/">');
+
+        // GitHub Pages SPA redirect handler
+        (function () {
+            const query = window.location.search;
+            if (query && query.indexOf('?p=') === 0) {
+                const route = query.slice(3); // Remove '?p='
+                window.history.replaceState(null, null,
+                    window.location.pathname.replace(/\/$/, '') + route
+                );
+            }
+        })();
+    </script>
+
+    <title>Centre de Formation Professionnelle (CFP)</title>
+    <meta name="description" content="Formation professionnelle de qualité pour votre avenir.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#005baa', // Enko Blue
+                        secondary: '#F97316', // Enko Orange (was Yellow)
+                        accent: '#e31e24', // Enko Red
+                        dark: '#333333',
+                        light: '#f4f4f4'
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    container: {
+                        center: true,
+                        padding: '1rem',
+                        screens: {
+                            sm: '640px',
+                            md: '768px',
+                            lg: '1024px',
+                            xl: '1280px',
+                            '2xl': '1280px', // Limit max width
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Plyr (Premium Video Player) -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <!-- Styles for transitions and custom patterns -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333333;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .page-fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Screen reader only - for accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Plyr Customization */
+        :root {
+            --plyr-color-main: #005baa;
+            /* Match site primary */
+        }
+
+        .plyr--video {
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-slate-900 min-h-screen flex flex-col">
+    <!-- Top Bar Placeholder -->
+    <div id="app-root" class="contents"></div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial AOS init handled in main.js
+        });
+    </script>
+
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
+    <!-- React entry point -->
+    <script type="module" src="/src/react.jsx"></script>
+</body>
+
+</html>

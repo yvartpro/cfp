@@ -1,0 +1,5 @@
+{
+  "name": "cfp-fullstack",
+  "private": true,
+  "scripts": { "dev": "node api/app.mjs", "start": "NODE_ENV=production node api/app.mjs", "build": "npm --prefix web run build", "db:migrate": "npm --prefix api run db:migrate", "db:create": "npm --prefix api run db:create" }
+}
