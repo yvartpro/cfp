@@ -1,5 +1,5 @@
 # Deployment
 
-Build the React application from the repository root with `npm run build`. Start the production server with `npm start` after setting the database and JWT environment variables in the root `.env` file.
+Build the React client with `npm run build` from the repository root. Vite writes the static site to `api/dist`; Nginx should use `/home/yves/apps/cfp/api/dist` as the site root and proxy `/api` and `/cfp/api` to the Node API port. Keep `/uploads` routed to the API or serve the upload directory directly.
 
-Express serves the public app from `web/dist`, the existing dashboard from `web/admin` at `/admin`, uploaded files from `/uploads`, and API routes from `/api`.
+Node runs `api/app.mjs` and exposes the API and uploaded-file routes only. Start it with `npm start` after configuring the root `.env` file.

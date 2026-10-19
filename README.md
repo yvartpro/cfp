@@ -13,10 +13,12 @@ Create `.env` in the repository root with `DATABASE_NAME`, `DATABASE_USER`, `DAT
 ```sh
 npm --prefix web install
 npm --prefix api install
-npm run dev
+npm run dev:api
+# in a second terminal
+npm run dev:web
 ```
 
-Visit `http://localhost:3000` or `http://localhost:3000/admin`. The API is available at `/api`; `/cfp/api` remains as a compatibility alias.
+Visit the Vite URL shown by `npm run dev:web` for the website and dashboard. The API runs at `http://localhost:3000`; Vite proxies `/api` to Node. `/cfp/api` remains as a compatibility alias.
 
 ## Production
 
@@ -25,7 +27,7 @@ npm run build
 npm start
 ```
 
-The Express server serves `web/dist` and the dashboard in `web/admin`.
+`npm start` runs the API only. Nginx serves the static client built into `api/dist` (including `/admin`). Node runs the API and upload routes only.
 
 ## Database
 
