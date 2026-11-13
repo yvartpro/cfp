@@ -38,6 +38,12 @@ app.get('/cfp/docs/api', (_req, res) => {
   res.send(docsHtml(endpoints, process.env.BASE_URL || '', 'CFP API Documentation', 'CFP Kigobe API'));
 });
 
+// Serve the built site and admin (npm run build) so `npm start` works without Nginx.
+const distDir = path.join(apiDir, 'dist');
+app.use(express.static(distDir));
+app.get(['/admin', '/admin/*'], (_req, res) => res.sendFile(path.join(distDir, 'admin', 'index.html')));
+app.get('*', (_req, res) => res.sendFile(path.join(distDir, 'index.html')));
+
 app.use((err, _req, res, _next) => {
   console.error(err);
   res.status(500).json({ error: 'Internal server error' });
